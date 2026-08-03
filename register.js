@@ -1,23 +1,6 @@
-let userId = Number(localStorage.getItem("userId")) || 0;
-
-
 function registerCustomer() {
 
-    // Increment user ID
-    userId++;
-
-    // Save latest ID
-    localStorage.setItem("userId", userId);
-
-
-    // Get existing customer list
-    let customerList = JSON.parse(localStorage.getItem("customerList")) || [];
-
-
-    // Create customer object
     let customer = {
-
-        userId: userId,
 
         userName: document.getElementById("txtInputUserName").value,
 
@@ -29,23 +12,6 @@ function registerCustomer() {
 
     };
 
-
-    console.log(customer);
-
-
-    // Add new customer to array
-    customerList.push(customer);
-
-
-    // Save array back to localStorage
-    localStorage.setItem(
-        "customerList",
-        JSON.stringify(customerList)
-    );
-
-
-
-    // Send data to API
     fetch("https://api.freeprojectapi.com/api/BankLoan/RegisterCustomer", {
 
         method: "POST",
@@ -64,21 +30,12 @@ function registerCustomer() {
 
         console.log(result);
 
+        if (result.result) {
 
-        if(result.result) {
+            alert("Registration Successful");
 
-            alert("Sign In Successful");
-
-
-            // Save registered user from API
-            localStorage.setItem(
-                "customer",
-                JSON.stringify(result.data)
-            );
-
-
-            window.location = "login.html";
-
+            // Go to login page
+            window.location.href = "login.html";
 
         } else {
 
@@ -90,7 +47,8 @@ function registerCustomer() {
 
     .catch(error => {
 
-        console.log(error);
+        console.error(error);
+        alert("Something went wrong.");
 
     });
 

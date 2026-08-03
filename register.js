@@ -1,7 +1,10 @@
 let userId = 0;
+const customerList = JSON.parse(localStorage.getItem("customerList"));
 
 function registerCustomer() {
     userId++;
+    const customerList = JSON.parse(localStorage.getItem("customerList")) || [];
+
 
     let customer = {
 
@@ -11,7 +14,7 @@ function registerCustomer() {
         password: document.getElementById("txtInputPassword").value
     };
 
-
+customerList.push(customer);
 
     fetch("https://api.freeprojectapi.com/api/BankLoan/RegisterCustomer", {
 

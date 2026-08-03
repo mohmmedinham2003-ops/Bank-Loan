@@ -1,9 +1,10 @@
-function registerCustomer(){
-    let userId = 0;
+let userId = 0;
+
+function registerCustomer() {
     userId++;
 
-     let customer = {
-        
+    let customer = {
+
         userName: document.getElementById("txtInputUserName").value,
         emailId: document.getElementById("txtInputEmail1").value,
         fullName: document.getElementById("txtInputName").value,
@@ -12,33 +13,33 @@ function registerCustomer(){
 
 
 
-    fetch("https://api.freeprojectapi.com/api/BankLoan/RegisterCustomer",{
+    fetch("https://api.freeprojectapi.com/api/BankLoan/RegisterCustomer", {
 
-        method:"POST",
+        method: "POST",
 
-        headers:{
-            "Content-Type":"application/json"
+        headers: {
+            "Content-Type": "application/json"
         },
 
-        body:JSON.stringify(customer)
+        body: JSON.stringify(customer)
 
     })
-    .then(res=>res.json())
-    .then(result=>{
-        console.log(result);
+        .then(res => res.json())
+        .then(result => {
+            console.log(result);
 
-        if(result.result){
-            alert("SingIn successfull");
-            localStorage.setItem("customer",JSON.stringify(result.data));
-            window.location = "login.html";
+            if (result.result) {
+                alert("SingIn successfull");
+                localStorage.setItem("customer", JSON.stringify(result.data));
+                window.location = "login.html";
 
-        }else{
-            alert(result.message);
-        }
-        
+            } else {
+                alert(result.message);
+            }
 
 
-    })
+
+        })
         .catch(error => console.log(error));
 
 

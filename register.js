@@ -1,21 +1,51 @@
-let userId = 0;
-const customerList = JSON.parse(localStorage.getItem("customerList"));
+let userId = Number(localStorage.getItem("userId")) || 0;
+
 
 function registerCustomer() {
+
+    // Increment user ID
     userId++;
-    const customerList = JSON.parse(localStorage.getItem("customerList")) || [];
+
+    // Save latest ID
+    localStorage.setItem("userId", userId);
 
 
+    // Get existing customer list
+    let customerList = JSON.parse(localStorage.getItem("customerList")) || [];
+
+
+    // Create customer object
     let customer = {
 
+        userId: userId,
+
         userName: document.getElementById("txtInputUserName").value,
+
         emailId: document.getElementById("txtInputEmail1").value,
+
         fullName: document.getElementById("txtInputName").value,
+
         password: document.getElementById("txtInputPassword").value
+
     };
 
-customerList.push(customer);
 
+    console.log(customer);
+
+
+    // Add new customer to array
+    customerList.push(customer);
+
+
+    // Save array back to localStorage
+    localStorage.setItem(
+        "customerList",
+        JSON.stringify(customerList)
+    );
+
+
+
+    // Send data to API
     fetch("https://api.freeprojectapi.com/api/BankLoan/RegisterCustomer", {
 
         method: "POST",
@@ -27,25 +57,41 @@ customerList.push(customer);
         body: JSON.stringify(customer)
 
     })
-        .then(res => res.json())
-        .then(result => {
-            console.log(result);
 
-            if (result.result) {
-                alert("SingIn successfull");
-                localStorage.setItem("customer", JSON.stringify(result.data));
-                window.location = "login.html";
+    .then(response => response.json())
 
-            } else {
-                alert(result.message);
-            }
+    .then(result => {
+
+        console.log(result);
 
 
+        if(result.result) {
 
-        })
-        .catch(error => console.log(error));
+            alert("Sign In Successful");
 
+
+            // Save registered user from API
+            localStorage.setItem(
+                "customer",
+                JSON.stringify(result.data)
+            );
+
+
+            window.location = "login.html";
+
+
+        } else {
+
+            alert(result.message);
+
+        }
+
+    })
+
+    .catch(error => {
+
+        console.log(error);
+
+    });
 
 }
-
-

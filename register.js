@@ -34,7 +34,6 @@ function registerCustomer() {
 
             alert("Registration Successful");
 
-            // Go to login page
             window.location.href = "login.html";
 
         } else {

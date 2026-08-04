@@ -33,7 +33,7 @@ function loginCustomer() {
             alert("Login Successful");
             window.location.href = "index.html";
 
-        } else if (result.data.role === "BankEmployee") {
+        } elseif (result.data.role === "BankEmployee") {
 
             alert("Login Successful");
             window.location.href = "employeeInterface.html";

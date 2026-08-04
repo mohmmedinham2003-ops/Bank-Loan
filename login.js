@@ -26,14 +26,21 @@ function loginCustomer() {
 
         console.log(result);
 
-        if (result.result) {
+        if (result.result.role == Customer) {
 
             alert("Login Successful");
             
 
             window.location.href = "index.html";
 
-        } else {
+        } else if(result.result.role == BankEmployee){
+
+            alert("Login Successful");
+            
+
+            window.location.href = "employeeInterface.html";
+        }
+        else {
 
             alert(result.message);
 

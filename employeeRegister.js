@@ -28,6 +28,9 @@ function registererUser() {
 
     .then(result => {
 
+    console.log("Employee Register Response:");
+    console.log(JSON.stringify(result, null, 2));
+
         console.log(result);
 
         if (result.result) {

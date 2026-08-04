@@ -24,21 +24,18 @@ function loginCustomer() {
 
     .then(result => {
 
-    console.log(result);
-    console.log(result.data.role);
-
 
     if (result.result) {
 
         if (result.data.role === "Customer") {
 
             alert("Login Successful");
-           // window.location.href = "index.html";
+           window.location.href = "index.html";
 
         } else if (result.data.role === "BankEmployee") {
 
             alert("Login Successful");
-           // window.location.href = "employeeInterface.html";
+            window.location.href = "employeeInterface.html";
 
         }
 

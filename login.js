@@ -24,29 +24,29 @@ function loginCustomer() {
 
     .then(result => {
 
-        console.log(result);
+    console.log(result);
 
-        if (result.result.role == Customer) {
+    if (result.result) {
+
+        if (result.data.role === "Customer") {
 
             alert("Login Successful");
-            
-
             window.location.href = "index.html";
 
-        } else if(result.result.role == BankEmployee){
+        } else if (result.data.role === "BankEmployee") {
 
             alert("Login Successful");
-            
-
             window.location.href = "employeeInterface.html";
-        }
-        else {
-
-            alert(result.message);
 
         }
 
-    })
+    } else {
+
+        alert(result.message);
+
+    }
+
+})
 
     .catch(error => {
 

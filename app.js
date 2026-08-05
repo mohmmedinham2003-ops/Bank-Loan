@@ -118,123 +118,80 @@ function loadApplicationTable() {
 
     let tableApplication = document.getElementById("tblApplication").value;
 
-    let body = `
+   let body = `
+
 <tr>
     <th>Full Name</th>
+    <td>${fullName}</td>
 </tr>
 
 <tr>
     <th>PAN Card</th>
+    <td>${panCard}</td>
 </tr>
 
 <tr>
     <th>Date of Birth</th>
+    <td>${dateOfBirth}</td>
 </tr>
 
 <tr>
     <th>Email</th>
+    <td>${email}</td>
 </tr>
 
 <tr>
     <th>Phone</th>
+    <td>${phone}</td>
 </tr>
 
 <tr>
     <th>Address</th>
+    <td>${address}</td>
 </tr>
 
 <tr>
     <th>City</th>
+    <td>${city}</td>
 </tr>
 
 <tr>
     <th>State</th>
+    <td>${state}</td>
 </tr>
 
 <tr>
     <th>ZIP Code</th>
+    <td>${zipCode}</td>
 </tr>
 
 <tr>
     <th>Annual Income</th>
+    <td>${annualIncome}</td>
 </tr>
 
 <tr>
     <th>Employment Status</th>
+    <td>${employmentStatus}</td>
 </tr>
 
 <tr>
     <th>Assets</th>
+    <td>${assets}</td>
 </tr>
 
 <tr>
     <th>Credit Score</th>
+    <td>${creditScore}</td>
 </tr>
 
 <tr>
     <th>Loan Amount</th>
+    <td>${loanAmount}</td>
 </tr>
-
-`
-
-    body += `
-
-                    <tr>
-                        <td>${fullName}</td>
-                    </tr>
-
-                   <tr>
-                        <td>${panCard}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${dateOfBirth}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${email}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${phone}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${address}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${city}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${state}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${zipCode}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${annualIncome}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${employmentStatus}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${creditScore}</td>
-                    </tr>
-
-                    <tr>
-                        <td>${loanAmount}</td>
-                    </tr>
-                    
-
 
 `;
 
-    tblApplication.innerHTML = body;
+tblApplication.innerHTML = body;
 
 }

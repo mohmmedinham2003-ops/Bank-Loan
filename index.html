@@ -16,77 +16,92 @@
         <h1 class="text-white m-0 text-center">Home Page</h1>
     </div>
 
-    <form class="card container mt-5">
-        <h1 class="text-center">Loan Application Form</h1>
-         
-        <div class="mb-3">
-            <label class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="txtFullName">
-        </div>
-        
-        <div class="mb-3">
-            <label class="form-label">PAN card</label>
-            <input type="number" class="form-control" id="txtPancard">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Date of Birth</label>
-            <input type="datetime" class="form-control" id="txtDOB">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" id="txtEmail">
-        </div>
+    <form class="card container mt-5 p-4" style="max-width:700px;">
+    <h1 class="text-center mb-4">Loan Application Form</h1>
 
-        <div class="mb-3">
-            <label class="form-label">Phone</label>
-            <input type="number" class="form-control" id="txtNumber">
-        </div>
-        
-        <div class="mb-3">
-            <label class="form-label">Address</label>
-            <input type="text" class="form-control" id="txtAddress">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">City</label>
-            <input type="text" class="form-control" id="txtCity">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">State</label>
-            <input type="text" class="form-control" id="txtState">
-        </div>
+    <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="txtFullName" required>
+    </div>
 
-        <div class="mb-3">
-            <label class="form-label">ZIP Code</label>
-            <input type="number" class="form-control" id="txtZIPcode">
-        </div>
-        
-        <div class="mb-3">
-            <label class="form-label">Annual Income</label>
-            <input type="number" class="form-control" id="txtAnnualincome">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Employment Status</label>
-            <input type="text" class="form-control" id="txtEmploymentstatus">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Credit Score</label>
-            <input type="number" class="form-control" id="txtCreditscore">
-        </div>
+    <div class="mb-3">
+        <label class="form-label">PAN Card</label>
+        <input type="text" class="form-control" id="txtPancard" required>
+    </div>
 
-        <div class="mb-3">
-            <label class="form-label">Assets</label>
-            <input type="text" class="form-control" id="txtAssets">
-        </div>
-        
-        <div class="mb-3">
-            <label class="form-label">Loan Amount</label>
-            <input type="number" class="form-control" id="txtLoanamount">
-        </div>
-        
-        <button type="button" class="btn btn-primary" onclick="applyForLoan()">Apply Loan</button><br>
+    <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="txtDOB" required>
+    </div>
 
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" id="txtEmail" required>
+    </div>
 
-    </form>
+    <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input type="number" class="form-control" id="txtNumber" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Address</label>
+        <input type="text" class="form-control" id="txtAddress" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">City</label>
+        <input type="text" class="form-control" id="txtCity" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">State</label>
+        <input type="text" class="form-control" id="txtState" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">ZIP Code</label>
+        <input type="number" class="form-control" id="txtZIPcode" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Annual Income</label>
+        <input type="number" class="form-control" id="txtAnnualincome" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Employment Status</label>
+        <select class="form-select" id="txtEmploymentstatus" required>
+            <option value="">Select</option>
+            <option>Employed</option>
+            <option>Self Employed</option>
+            <option>Business Owner</option>
+            <option>Government Employee</option>
+            <option>Student</option>
+            <option>Retired</option>
+            <option>Unemployed</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Credit Score</label>
+        <input type="number" class="form-control" id="txtCreditscore" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Assets</label>
+        <input type="text" class="form-control" id="txtAssets">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Loan Amount</label>
+        <input type="number" class="form-control" id="txtLoanamount" required>
+    </div>
+
+    <button type="button" class="btn btn-primary w-100" onclick="applyForLoan()">
+        Apply Loan
+    </button>
+</form>
     
 
 

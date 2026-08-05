@@ -58,31 +58,60 @@ function applyForLoan() {
 
     })
 
-    .then(response => response.json())
+        .then(response => response.json())
 
-    .then(result => {
+        .then(result => {
 
-        console.log(result);
+            console.log(result);
 
-        if(result.result){
+            if (result.result) {
 
-            alert("Application Submitted Successfully");
+                alert("Application Submitted Successfully");
 
-        }
-        else{
+            }
+            else {
 
-            alert(result.message);
+                alert(result.message);
 
-        }
+            }
 
-    })
+        })
 
-    .catch(error => {
+        .catch(error => {
 
-        console.error(error);
+            console.error(error);
 
-        alert("Something went wrong.");
+            alert("Something went wrong.");
 
-    });
+        });
+
+}
+
+function loadApplicationTable() {
+
+    let tableApplication = document.getElementById("tblApplication").value;
+
+    let body = `
+<tr>
+            <th>Full Name</th>
+            <th>PAN Card</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <thCity</th>
+            <th>State</th>
+            <th>ZIP Code</th>
+            <th>Annual Income</th>
+            <th>Employment Status</th>
+            <th>Assets</th>
+            <th>Credit Score</th>
+            <th>Loan Amount</th>         
+
+                    </tr>
+
+`
+
+
 
 }

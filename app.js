@@ -1,15 +1,16 @@
 function applyForLoan() {
+
     let applyCustomer = {
 
         fullName: document.getElementById("txtFullName").value,
 
-        PANCard: document.getElementById("txtPancard").value,
+        panCard: document.getElementById("txtPancard").value,
 
-        DOB: document.getElementById("txtDOB").value,
+        dateOfBirth: document.getElementById("txtDOB").value,
 
         email: document.getElementById("txtEmail").value,
 
-        phoneNo: document.getElementById("txtNumber").value,
+        phone: document.getElementById("txtNumber").value,
 
         address: document.getElementById("txtAddress").value,
 
@@ -17,21 +18,35 @@ function applyForLoan() {
 
         state: document.getElementById("txtState").value,
 
-        ZIPCode: document.getElementById("txtZIPcode").value,
+        zipCode: document.getElementById("txtZIPcode").value,
 
-        auualIncome: document.getElementById("txtAnnualincome").value,
+        annualIncome: Number(document.getElementById("txtAnnualincome").value),
 
         employmentStatus: document.getElementById("txtEmploymentstatus").value,
 
-        creditScore: document.getElementById("txtCreditscore").value,
+        creditScore: Number(document.getElementById("txtCreditscore").value),
 
         assets: document.getElementById("txtAssets").value,
 
-        loanAmount: document.getElementById("txtLoanamount").value
+        applicationStatus: "Pending",
+
+        dateApplied: new Date().toISOString(),
+
+        loans: [
+            {
+                bankName: "BankLoan",
+                loanAmount: Number(document.getElementById("txtLoanamount").value),
+                emi: 0
+            }
+        ]
 
     };
 
-     fetch("hhttps://api.freeprojectapi.com/api/BankLoan/AddNewApplication", {
+
+    console.log(applyCustomer);
+
+
+    fetch("https://api.freeprojectapi.com/api/BankLoan/AddNewApplication", {
 
         method: "POST",
 
@@ -49,12 +64,12 @@ function applyForLoan() {
 
         console.log(result);
 
-        if (result.result) {
+        if(result.result){
 
-            alert("Applied Successful");
+            alert("Application Submitted Successfully");
 
-
-        } else {
+        }
+        else{
 
             alert(result.message);
 
@@ -65,9 +80,9 @@ function applyForLoan() {
     .catch(error => {
 
         console.error(error);
+
         alert("Something went wrong.");
 
     });
-
 
 }

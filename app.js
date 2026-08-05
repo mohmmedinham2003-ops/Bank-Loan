@@ -111,6 +111,8 @@ function loadApplicationTable() {
 
     let employmentStatus = document.getElementById("txtEmploymentstatus").value;
 
+    let assets = document.getElementById("txtAssets").value; 
+
     let creditScore = Number(document.getElementById("txtCreditscore").value);
 
     let loanAmount = Number(document.getElementById("txtLoanamount").value);
@@ -118,7 +120,8 @@ function loadApplicationTable() {
 
     let tableApplication = document.getElementById("tblApplication").value;
 
-   let body = `
+   let body = ``;
+    body += `
 
 <tr>
     <th>Full Name</th>

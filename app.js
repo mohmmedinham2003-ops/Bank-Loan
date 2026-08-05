@@ -112,7 +112,7 @@ function loadApplicationTable() {
     let employmentStatus = document.getElementById("txtEmploymentstatus").value;
 
     let creditScore = Number(document.getElementById("txtCreditscore").value);
-    
+
     let loanAmount = Number(document.getElementById("txtLoanamount").value);
 
 
@@ -120,44 +120,121 @@ function loadApplicationTable() {
 
     let body = `
 <tr>
-            <th>Full Name</th>
-            <th>PAN Card</th>
-            <th>Date of Birth</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <thCity</th>
-            <th>State</th>
-            <th>ZIP Code</th>
-            <th>Annual Income</th>
-            <th>Employment Status</th>
-            <th>Assets</th>
-            <th>Credit Score</th>
-            <th>Loan Amount</th>         
+    <th>Full Name</th>
+</tr>
 
-                    </tr>
+<tr>
+    <th>PAN Card</th>
+</tr>
+
+<tr>
+    <th>Date of Birth</th>
+</tr>
+
+<tr>
+    <th>Email</th>
+</tr>
+
+<tr>
+    <th>Phone</th>
+</tr>
+
+<tr>
+    <th>Address</th>
+</tr>
+
+<tr>
+    <th>City</th>
+</tr>
+
+<tr>
+    <th>State</th>
+</tr>
+
+<tr>
+    <th>ZIP Code</th>
+</tr>
+
+<tr>
+    <th>Annual Income</th>
+</tr>
+
+<tr>
+    <th>Employment Status</th>
+</tr>
+
+<tr>
+    <th>Assets</th>
+</tr>
+
+<tr>
+    <th>Credit Score</th>
+</tr>
+
+<tr>
+    <th>Loan Amount</th>
+</tr>
 
 `
 
-body+=`
-<tr>
-                    <td>${fullName}</td>
-                    <td>${panCard}</td>
-                    <td>${dateOfBirth}</td>
-                    <td>${email}</td>
-                    <td>${phone}</td>
-                    <td>${address}</td>
-                    <td>${city}</td>
-                    <td>${state}</td>
-                    <td>${zipCode}</td>
-                    <td>${annualIncome}</td>
-                    <td>${employmentStatus}</td>
-                    <td>${creditScore}</td>
-                    <td>${loanAmount}</td>
+    body += `
+
+                    <tr>
+                        <td>${fullName}</td>
                     </tr>
+
+                   <tr>
+                        <td>${panCard}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${dateOfBirth}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${email}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${phone}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${address}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${city}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${state}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${zipCode}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${annualIncome}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${employmentStatus}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${creditScore}</td>
+                    </tr>
+
+                    <tr>
+                        <td>${loanAmount}</td>
+                    </tr>
+                    
+
 
 `;
 
-tblApplication.innerHTML = body;
+    tblApplication.innerHTML = body;
 
 }

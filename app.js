@@ -139,6 +139,25 @@ function loadApplicationTable() {
 
 `
 
+body+=`
+<tr>
+                    <td>${fullName}</td>
+                    <td>${panCard}</td>
+                    <td>${dateOfBirth}</td>
+                    <td>${email}</td>
+                    <td>${phone}</td>
+                    <td>${address}</td>
+                    <td>${city}</td>
+                    <td>${state}</td>
+                    <td>${zipCode}</td>
+                    <td>${annualIncome}</td>
+                    <td>${employmentStatus}</td>
+                    <td>${creditScore}</td>
+                    <td>${loanAmount}</td>
+                    </tr>
 
+`;
+
+tblApplication.innerHTML = body;
 
 }

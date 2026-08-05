@@ -89,6 +89,33 @@ function applyForLoan() {
 
 function loadApplicationTable() {
 
+    let fullName = document.getElementById("txtFullName").value;
+
+    let panCard = document.getElementById("txtPancard").value;
+
+    let dateOfBirth = document.getElementById("txtDOB").value;
+
+    let email = document.getElementById("txtEmail").value;
+
+    let phone = document.getElementById("txtNumber").value;
+
+    let address = document.getElementById("txtAddress").value;
+
+    let city = document.getElementById("txtCity").value;
+
+    let state = document.getElementById("txtState").value;
+
+    let zipCode = document.getElementById("txtZIPcode").value;
+
+    let annualIncome = Number(document.getElementById("txtAnnualincome").value);
+
+    let employmentStatus = document.getElementById("txtEmploymentstatus").value;
+
+    let creditScore = Number(document.getElementById("txtCreditscore").value);
+    
+    let loanAmount = Number(document.getElementById("txtLoanamount").value);
+
+
     let tableApplication = document.getElementById("tblApplication").value;
 
     let body = `

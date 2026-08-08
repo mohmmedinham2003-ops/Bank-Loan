@@ -32,7 +32,7 @@ function applyForLoan() {
 
         dateApplied: new Date().toISOString(),
 
-        employeeAssigned: document.getElementById("txtEmploymeeAssigned").value,
+        employeeAssigned: document.getElementById("txtEmployeeAssigned").value,
 
         loans: [
             {

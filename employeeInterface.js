@@ -29,6 +29,31 @@ function getAllApplications() {
 }
 
 function getAssignedApplications() {
-    
+    fetch("https://api.freeprojectapi.com/api/BankLoan/GetAllApplications").then(res => res.json()).then(result => {
+
+        console.log(result);
+
+
+        result.data.forEach(application => {
+            
+
+            document.getElementById("tblAssignedApplications").innerHTML += `
+                <tr>
+
+                    <td>${application.applicationId}</td>
+
+                    <td>${application.fullName}</td>
+
+                    <td>${application.loanAmount}</td>
+
+                    <td>${application.applicationStatus}</td>
+
+
+                </tr>
+            `;
+
+        });
+
+    });
     
 }

@@ -1,8 +1,8 @@
 function loginCustomer() {
 
-    let loginData = {
-        userName: document.getElementById("txtInputUserName").value,
-        password: document.getElementById("txtInputPassword").value
+    let empLoginData = {
+        userName: document.getElementById("txtEmpUserName").value,
+        password: document.getElementById("txtEmpPassword").value
     };
 
     fetch("https://api.freeprojectapi.com/api/BankLoan/login", {
@@ -10,7 +10,7 @@ function loginCustomer() {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(loginData)
+        body: JSON.stringify(empLoginData)
     })
     .then(response => response.json())
     .then(result => {

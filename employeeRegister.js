@@ -38,7 +38,7 @@ function registererUser() {
             alert("Registration Successful");
 
             // Go to login page
-            window.location.href = "login.html";
+            window.location.href = "employeeLogin.html";
 
         } else {
 

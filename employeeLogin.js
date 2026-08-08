@@ -1,4 +1,4 @@
-function loginCustomer() {
+function loginEmployee() {
 
     let empLoginData = {
         userName: document.getElementById("txtEmpUserName").value,
@@ -18,21 +18,8 @@ function loginCustomer() {
 
         if (result.result) {
 
-
-            if (result.data.role === "Customer") {
-
-                alert("Customer Login");
-                window.location.href = "index.html";
-
-            } else if (result.data.role === "BankEmployee") {
-
-                alert("Employee Login");
+                alert("Employee Login Successfull");
                 window.location.href = "employeeInterface.html";
-
-            } else {
-
-                alert("Unknown role: " + result.data.role);
-            }
 
         } else {
 

@@ -32,6 +32,8 @@ function applyForLoan() {
 
         dateApplied: new Date().toISOString(),
 
+        employeeAssigned: document.getElementById("txtEmploymeeAssigned").value,
+
         loans: [
             {
                 bankName: "BankLoan",
@@ -87,6 +89,45 @@ function applyForLoan() {
 
 }
 
+function loadEmployees() {
+
+    fetch("https://api.freeprojectapi.com/api/BankLoan/GetAllUsers")
+        .then(response => response.json())
+        .then(result => {
+
+            console.log(result);
+
+            let employeeSelect =
+                document.getElementById("txtEmployeeAssigned");
+
+            employeeSelect.innerHTML =
+                `<option value="">Select Employee</option>`;
+
+            result.data.forEach(user => {
+
+                if (user.role === "BankEmployee") {
+
+                    employeeSelect.innerHTML += `
+                        <option value="${user.userId}">
+                            ${user.fullName}
+                        </option>
+                    `;
+                }
+
+            });
+
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+window.onload = function () {
+    loadEmployees();
+};
+
+
+
 function loadApplicationTable() {
 
     let fullName = document.getElementById("txtFullName").value;
@@ -117,8 +158,11 @@ function loadApplicationTable() {
 
     let loanAmount = Number(document.getElementById("txtLoanamount").value);
 
+    let assigedEmployeee = document.getElementById("txtEmployeeAssigned");
 
     let tableApplication = document.getElementById("tblApplication").value;
+
+
 
    let body = ``;
     body += `
@@ -191,6 +235,11 @@ function loadApplicationTable() {
 <tr>
     <th>Loan Amount</th>
     <td>${loanAmount}</td>
+</tr>
+
+<tr>
+    <th>Assigned Employee</th>
+    <td>${assigedEmployeee}</td>
 </tr>
 
 `;

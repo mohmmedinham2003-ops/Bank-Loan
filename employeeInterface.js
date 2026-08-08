@@ -18,17 +18,6 @@ function getAllApplications() {
 
                     <td>${application.applicationStatus}</td>
 
-                    <td>
-
-                        <button onclick="approveLoan(${application.applicationId})">
-                            Approve
-                        </button>
-
-                        <button onclick="rejectLoan(${application.applicationId})">
-                            Reject
-                        </button>
-
-                    </td>
 
                 </tr>
             `;
